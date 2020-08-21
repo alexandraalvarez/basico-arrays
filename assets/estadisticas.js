@@ -2,8 +2,7 @@
 document.write('<H1>Estadísticas Centro Médico Ñuñoa</H1>');
 
 
-
-
+// Desafío día 1
 //Arreglo de objetos radiología
     var radiologia = [ 
         { Hora: '11:00', Especialista: 'IGNACIO SCHULZ', Paciente: 'FRANCISCA ROJAS', Rut: '9878782-1', Previsión: 'FONASA'},
@@ -23,6 +22,13 @@ document.write('<H1>Estadísticas Centro Médico Ñuñoa</H1>');
         { Hora: '12:00', Especialista: 'ARTURO CAVAGNARO', Paciente: 'CECILIA MENDEZ', Rut: '9747535-8', Previsión: 'ISAPRE'},
         { Hora: '12:30', Especialista: 'ANDRES KANACRI', Paciente: 'MARCIAL SUAZO', Rut: '11254785-5', Previsión: 'ISAPRE'},
     ];
+
+    //Desafío día 2
+    traumatologia.push({ Hora: '09:00', Especialista: 'RENÉ POBLETE', Paciente: 'ANA GELLONA', Rut: '13123329-7', Previsión: 'ISAPRE'},
+                       { Hora: '09:30', Especialista: 'MARIA SOLAR', Paciente: 'RAMIRO ANDRADE', Rut: '12221451-K', Previsión: 'FONASA'},
+                       { Hora: '10:00', Especialista: 'RAUL LOYOLA', Paciente: 'CARMEN ISLA', Rut: '10112348-3', Previsión: 'ISAPRE'},
+                       { Hora: '10:30', Especialista: 'ANTONIO LARENAS', Paciente: 'PABLO LOAYZA', Rut: '13453234-1', Previsión: 'ISAPRE'},
+                       { Hora: '12:00', Especialista: 'MATIAS ARAVENA', Paciente: 'SUSANA POBLETE', Rut: '14345656-6', Previsión: 'FONASA'});
     
      //Arreglo de objetos dental
      var dental = [
