@@ -50,7 +50,7 @@ radiologia.pop();
 document.write('<H2>Atenciones dentales</H2>');
 
 function printAtenciones (elemento, index, array) {
-    document.write(`<H4> ${dental[index].Hora} - ${dental[index].Especialista} - ${dental[index].Paciente} - ${dental[index].Rut} - ${dental[index].Previsión} </H4>`);
+    document.write(`<p> ${dental[index].Hora} - ${dental[index].Especialista} - ${dental[index].Paciente} - ${dental[index].Rut} - ${dental[index].Previsión} </p>`);
 }
 dental.forEach(printAtenciones);
 
@@ -60,7 +60,7 @@ document.write('<br><H2>Lista de todos los pacientes</H2>');
 var atencionesTodos = radiologia.concat(traumatologia, dental);
 
 function printPacientes (elemento, index, array) {
-    document.write(`<H4> ${atencionesTodos[index].Paciente} </H4>`);
+    document.write(`<p> ${atencionesTodos[index].Paciente} </p>`);
 }
 
 atencionesTodos.forEach(printPacientes);
@@ -78,7 +78,7 @@ function changePrevi(item) {
 dental.map(changePrevi);
 
 function printPrevi (elemento, index, array) {
-   document.write(`<H4> ${dental[index].Paciente} ; ${dental[index].Rut} ; ${dental[index].Previsión} </H4>`);
+   document.write(`<p> ${dental[index].Paciente} ; ${dental[index].Rut} ; ${dental[index].Previsión} </p>`);
 }
 dental.forEach(printPrevi);
 
@@ -86,21 +86,21 @@ dental.forEach(printPrevi);
 //Tarea 2, resumen estadísticas 
 document.write('<br><H2>Resumen de atenciones por especialidad</H2>'); 
 
-document.write(`<H3>Cantidad de atenciones para Radiología: ${radiologia.length} </H3>`);
-document.write(`<H3>Cantidad de atenciones para Traumatología: ${traumatologia.length} </H3>`);
-document.write(`<H3>Cantidad de atenciones para Dental: ${dental.length} </H3>`);
+document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length} </p>`);
+document.write(`<p>Cantidad de atenciones para Traumatología: ${traumatologia.length} </p>`);
+document.write(`<p>Cantidad de atenciones para Dental: ${dental.length} </p>`);
 
 //Tarea 3, detalle de primer y último paciente por área
 document.write('<br><H2>Primer paciente y último por especialidad</H2>'); 
 
-document.write(`<H3> Primera atención: ${radiologia[0].Paciente} - ${radiologia[0].Rut} - ${radiologia[0].Previsión} 
-    | Última atención: ${radiologia[radiologia.length - 1].Paciente} - ${radiologia[radiologia.length - 1].Rut} - ${radiologia[radiologia.length - 1].Previsión} </H3>`);
+document.write(`<p> Primera atención: ${radiologia[0].Paciente} - ${radiologia[0].Rut} - ${radiologia[0].Previsión} 
+    | Última atención: ${radiologia[radiologia.length - 1].Paciente} - ${radiologia[radiologia.length - 1].Rut} - ${radiologia[radiologia.length - 1].Previsión} </p>`);
 
-document.write(`<H3> Primera atención: ${traumatologia[0].Paciente} - ${traumatologia[0].Rut} - ${traumatologia[0].Previsión} 
-    | Última atención: ${traumatologia[traumatologia.length - 1].Paciente} - ${traumatologia[traumatologia.length - 1].Rut} - ${traumatologia[traumatologia.length - 1].Previsión} </H3>`);
+document.write(`<p> Primera atención: ${traumatologia[0].Paciente} - ${traumatologia[0].Rut} - ${traumatologia[0].Previsión} 
+    | Última atención: ${traumatologia[traumatologia.length - 1].Paciente} - ${traumatologia[traumatologia.length - 1].Rut} - ${traumatologia[traumatologia.length - 1].Previsión} </p>`);
 
-document.write(`<H3> Primera atención: ${dental[0].Paciente} - ${dental[0].Rut} - ${dental[0].Previsión} 
-    | Última atención: ${dental[dental.length - 1].Paciente} - ${dental[dental.length - 1].Rut} - ${dental[dental.length - 1].Previsión} </H3>`);
+document.write(`<p> Primera atención: ${dental[0].Paciente} - ${dental[0].Rut} - ${dental[0].Previsión} 
+    | Última atención: ${dental[dental.length - 1].Paciente} - ${dental[dental.length - 1].Rut} - ${dental[dental.length - 1].Previsión} </p>`);
 
 
 
