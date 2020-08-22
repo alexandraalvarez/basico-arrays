@@ -78,7 +78,7 @@ function changePrevi(item) {
 dental.map(changePrevi);
 
 function printPrevi (elemento, index, array) {
-   document.write(`<H4> ${dental[index].Paciente} - ${dental[index].Rut} - ${dental[index].Previsión} </H4>`);
+   document.write(`<H4> ${dental[index].Paciente} ; ${dental[index].Rut} ; ${dental[index].Previsión} </H4>`);
 }
 dental.forEach(printPrevi);
 
