@@ -2,8 +2,8 @@
 document.write('<H1>Estadísticas Centro Médico Ñuñoa</H1>');
 
 
-// Desafío día 1
-//Arreglo de objetos radiología
+//// Desafío día 1
+//Tarea 1, arreglo de objetos radiología
 var radiologia = [
     { Hora: '11:00', Especialista: 'IGNACIO SCHULZ', Paciente: 'FRANCISCA ROJAS', Rut: '9878782-1', Previsión: 'FONASA' },
     { Hora: '11:30', Especialista: 'FEDERICO SUBERCASEAUX', Paciente: 'PAMELA ESTRADA', Rut: '15345241-3', Previsión: 'ISAPRE' },
@@ -12,7 +12,7 @@ var radiologia = [
     { Hora: '16:00', Especialista: 'PATRICIA SUAZO', Paciente: 'RAMON ULLOA', Rut: '14989389-K', Previsión: 'FONASA' },
 ];
 
-////Arreglo de objetos traumatologia
+//Tarea 1, arreglo de objetos traumatologia
 var traumatologia = [
     { Hora: '8:00', Especialista: 'MARIA PAZ ALTUZARRA', Paciente: 'PAULA SANCHEZ', Rut: '15554774-5', Previsión: 'FONASA' },
     { Hora: '10:00', Especialista: 'RAUL ARAYA', Paciente: 'ANGÉLICA NAVAS', Rut: '15444147-9', Previsión: 'ISAPRE' },
@@ -23,7 +23,7 @@ var traumatologia = [
     { Hora: '12:30', Especialista: 'ANDRES KANACRI', Paciente: 'MARCIAL SUAZO', Rut: '11254785-5', Previsión: 'ISAPRE' },
 ];
 
-//Arreglo de objetos dental
+//Tarea 1, arreglo de objetos dental
 var dental = [
     { Hora: '8:30', Especialista: 'ANDREA ZUÑIGA', Paciente: 'MARCELA RETAMAL', Rut: '11123425-6', Previsión: 'ISAPRE' },
     { Hora: '11:00', Especialista: 'MARIA PIA ZAÑARTU', Paciente: 'ANGEL MUÑOZ', Rut: '9878789-2', Previsión: 'ISAPRE' },
@@ -33,18 +33,20 @@ var dental = [
     { Hora: '14:00', Especialista: 'RAQUEL VILLASECA', Paciente: 'ANA SEPULVEDA', Rut: '14441281-0', Previsión: 'ISAPRE' },
 ];
 
-//Desafío día 2, tarea 1
+
+////Desafío día 2
+//Tarea 1, agregar las nuevas atenciones de traumatologia
 traumatologia.push({ Hora: '09:00', Especialista: 'RENÉ POBLETE', Paciente: 'ANA GELLONA', Rut: '13123329-7', Previsión: 'ISAPRE' },
     { Hora: '09:30', Especialista: 'MARIA SOLAR', Paciente: 'RAMIRO ANDRADE', Rut: '12221451-K', Previsión: 'FONASA' },
     { Hora: '10:00', Especialista: 'RAUL LOYOLA', Paciente: 'CARMEN ISLA', Rut: '10112348-3', Previsión: 'ISAPRE' },
     { Hora: '10:30', Especialista: 'ANTONIO LARENAS', Paciente: 'PABLO LOAYZA', Rut: '13453234-1', Previsión: 'ISAPRE' },
     { Hora: '12:00', Especialista: 'MATIAS ARAVENA', Paciente: 'SUSANA POBLETE', Rut: '14345656-6', Previsión: 'FONASA' });
 
-//Desafío día 2, tarea 2
+////Tarea 2, eliminar primera y última de radiologia
 radiologia.shift();
 radiologia.pop();
 
-//Desafío día 2, tarea 3
+//Tarea 3, mostrar todas las atenciones de dental
 document.write('<H2>Atenciones dentales</H2>');
 
 function printAtenciones (elemento, index, array) {
@@ -52,13 +54,30 @@ function printAtenciones (elemento, index, array) {
 }
 dental.forEach(printAtenciones);
 
-//Desafío día 1
-//Resumen estadísticas 
+//Tarea 4, mostrar lista de todos los pacientes que se atendieron en el centro médico
+document.write('<H2>Lista de todos los pacientes</H2>'); 
+
+var atencionesTodos = radiologia.concat(traumatologia, dental);
+console.log (atencionesTodos);
+
+function printPacientes (elemento, index, array) {
+    document.write(`<H4> ${atencionesTodos[index].Paciente} </H4>`);
+}
+
+atencionesTodos.forEach(printPacientes);
+
+
+////Desafío día 1
+//Tarea 2, resumen estadísticas 
+document.write('<H2>Resumen de atenciones por especialidad</H2>'); 
+
 document.write(`<H3>Cantidad de atenciones para Radiología: ${radiologia.length} </H3>`);
 document.write(`<H3>Cantidad de atenciones para Traumatología: ${traumatologia.length} </H3>`);
 document.write(`<H3>Cantidad de atenciones para Dental: ${dental.length} </H3>`);
 
-//Detalle de primer y último paciente por área
+//Tarea 3, detalle de primer y último paciente por área
+document.write('<H2>Primer paciente y último por especialidad</H2>'); 
+
 document.write(`<H3> Primera atención: ${radiologia[0].Paciente} - ${radiologia[0].Rut} - ${radiologia[0].Previsión} 
     | Última atención: ${radiologia[radiologia.length - 1].Paciente} - ${radiologia[radiologia.length - 1].Rut} - ${radiologia[radiologia.length - 1].Previsión} </H3>`);
 
@@ -67,6 +86,11 @@ document.write(`<H3> Primera atención: ${traumatologia[0].Paciente} - ${traumat
 
 document.write(`<H3> Primera atención: ${dental[0].Paciente} - ${dental[0].Rut} - ${dental[0].Previsión} 
     | Última atención: ${dental[dental.length - 1].Paciente} - ${dental[dental.length - 1].Rut} - ${dental[dental.length - 1].Previsión} </H3>`);
+
+
+
+
+
 
 /*var Traumatología = [
     { Hora: '', Especialista: '', Paciente: '', Rut: '', Previsión: ''},
