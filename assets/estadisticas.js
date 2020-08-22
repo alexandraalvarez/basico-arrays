@@ -42,7 +42,7 @@ traumatologia.push({ Hora: '09:00', Especialista: 'RENÉ POBLETE', Paciente: 'AN
     { Hora: '10:30', Especialista: 'ANTONIO LARENAS', Paciente: 'PABLO LOAYZA', Rut: '13453234-1', Previsión: 'ISAPRE' },
     { Hora: '12:00', Especialista: 'MATIAS ARAVENA', Paciente: 'SUSANA POBLETE', Rut: '14345656-6', Previsión: 'FONASA' });
 
-////Tarea 2, eliminar primera y última de radiologia
+//Tarea 2, eliminar primera y última de radiologia
 radiologia.shift();
 radiologia.pop();
 
@@ -55,10 +55,9 @@ function printAtenciones (elemento, index, array) {
 dental.forEach(printAtenciones);
 
 //Tarea 4, mostrar lista de todos los pacientes que se atendieron en el centro médico
-document.write('<H2>Lista de todos los pacientes</H2>'); 
+document.write('<br><H2>Lista de todos los pacientes</H2>'); 
 
 var atencionesTodos = radiologia.concat(traumatologia, dental);
-console.log (atencionesTodos);
 
 function printPacientes (elemento, index, array) {
     document.write(`<H4> ${atencionesTodos[index].Paciente} </H4>`);
@@ -66,17 +65,33 @@ function printPacientes (elemento, index, array) {
 
 atencionesTodos.forEach(printPacientes);
 
+//Tarea 5, invertir los valores de las previsión de Fonasa a Isapre y viceversa en dental
+document.write('<br><H2>Cambio de previsión</H2>'); 
+
+function changePrevi(item) {
+  if (item.Previsión == "ISAPRE") {
+    item.Previsión = "FONASA";
+  } else {
+    item.Previsión = "ISAPRE";
+  }
+}
+dental.map(changePrevi);
+
+function printPrevi (elemento, index, array) {
+   document.write(`<H4> ${dental[index].Paciente} - ${dental[index].Rut} - ${dental[index].Previsión} </H4>`);
+}
+dental.forEach(printPrevi);
 
 ////Desafío día 1
 //Tarea 2, resumen estadísticas 
-document.write('<H2>Resumen de atenciones por especialidad</H2>'); 
+document.write('<br><H2>Resumen de atenciones por especialidad</H2>'); 
 
 document.write(`<H3>Cantidad de atenciones para Radiología: ${radiologia.length} </H3>`);
 document.write(`<H3>Cantidad de atenciones para Traumatología: ${traumatologia.length} </H3>`);
 document.write(`<H3>Cantidad de atenciones para Dental: ${dental.length} </H3>`);
 
 //Tarea 3, detalle de primer y último paciente por área
-document.write('<H2>Primer paciente y último por especialidad</H2>'); 
+document.write('<br><H2>Primer paciente y último por especialidad</H2>'); 
 
 document.write(`<H3> Primera atención: ${radiologia[0].Paciente} - ${radiologia[0].Rut} - ${radiologia[0].Previsión} 
     | Última atención: ${radiologia[radiologia.length - 1].Paciente} - ${radiologia[radiologia.length - 1].Rut} - ${radiologia[radiologia.length - 1].Previsión} </H3>`);
